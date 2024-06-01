@@ -1,0 +1,99 @@
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  h1 {
+    text-align: center;
+  }
+  
+  .logo-title{
+    display: inline-block;
+    
+   }
+  
+  .title-text{
+    display: inline-block;
+    color: #006600;
+    font-size: 80px;
+  
+   }
+  
+  .divide {
+    text-align: center;
+    
+    position: relative;
+  
+  }
+  
+  .child{
+    float: left;
+    width: 50%;
+  }
+  
+  
+  .btn{
+    border: 2px solid #006600;
+    background: none;
+    padding: 8px 10px;
+    font-size: 20px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+  
+  }
+  
+  .btn1{
+    color: #006600;
+  }
+  
+  .btn1:hover{
+    color: #fff;
+  
+  }
+  
+  .btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #006600;
+    z-index: -1;
+    transition: 0.8s;
+  }
+  
+  .btn1::before{
+    top: 0;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .btn1:hover::before{
+    height: 180%;
+  }
+  
+  
+    
+  
+    .top-part{
+      text-align: center;
+      font-size: 50px;
+      background: #ccff99;
+      padding: 100px 0px;
+      transform: skew(0deg, -9deg) translateY(-120px);
+    }
+  
+    .textbox{
+      padding-top: 80px;
+      transform: skew(0deg, 9deg);
+    }
+  
+    .bottom-part{
+      padding: 0px;
+  
+    }
+  

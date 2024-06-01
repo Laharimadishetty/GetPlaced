@@ -1,0 +1,164 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/basestyle.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>GetPlaced</title>
+    
+    <style type="text/css">
+        .asteriskField {
+            display: none;
+        }
+
+        form .alert ul li {
+            list-style: none;
+        }
+
+        form .alert ul {
+            padding: 0;
+            margin: 0;
+        }
+
+       
+.btn-link{
+	color: #006600 !important;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+.col-md-7{
+  padding: 20px;
+
+}
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+.navbar-text{
+  float: right;
+}
+/* img */
+.impact{
+  height: 100%;
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+}
+
+.impact:hover {
+   transform: scale(1.10);
+}
+
+.mission{
+  transition: 0.5s all ease-in-out;
+}
+
+.mission:hover{
+  transform: scale(1.10);
+}
+/* image zooming */
+
+i{
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+.navbar-brand{
+  font-size: 30px;
+}
+
+
+    </style>
+	
+
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js
+" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js
+" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js
+" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4" id="mynav">
+        <div class="container">
+            <img src="{% static 'images/cap.png' %}" width="50px" height="50px" ><a class="navbar-brand" href="#">GetPlaced</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav mr-auto">
+                   
+                    
+                </ul>
+                
+                <ul class="navbar-nav">
+                   
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="{%url 'shome' %}" class="btn btn-outline-light">Home</a><!--change here-->
+                   <a href="{%url 'sviewplacedetails' %}" class="btn btn-outline-light">Placement Details</a>
+                    <a href="{%url 'sviewplacehis' %}" class="btn btn-light ml-2">Placement History</a>
+                    <a href="{% url 'sviewsugg' %}" class="btn btn-outline-light">Tips</a>
+                     <div class="btn-group">
+                    <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+                        Profile
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'viewprofile' %}">
+                            <h6 style="color:  #006600;">View Profile</h6>
+                        </a>
+                        <a class="dropdown-item" href="{% url 'studprofile' %}">
+                            <h6 style="color:  #006600;">Create Profile</h6>
+                        </a></div></div>
+                    <a href="{%url 'slogout' %}" class="btn btn-outline-light">Logout</a></form>
+
+                </div>
+            </div>
+        </nav>
+    <table style="width:100%">
+        <tr>
+            <th>Year  </th>>
+            <th>Company Name   </th>
+            <th>Type   </th>
+            <th>Package  </th>
+            <th>Students Applied    </th>
+            <th>Students Placed</th>
+        </tr>
+        {% for j in plac %}
+        <tr>
+            <td>{{ j.pyear }}  </td>
+            <td>{{ j.company_name }}  </td>
+            <td>{{ j.ptype }}  </td>
+            <td>{{ j.package }}  </td>
+            <td>{{ j.students_applied }}  </td>
+            <td>{{ j.students_placed }}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    </body>
+</html>
+
+
+
+
+
+

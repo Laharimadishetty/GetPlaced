@@ -1,0 +1,38 @@
+from django.urls import path
+from . import views
+from django.contrib.auth import views as auth_views
+
+urlpatterns=[
+    path('',views.first,name='first'),
+    path('login/',views.login,name='login'),
+    path('vlogin/',views.vlogin,name='vlogin'),
+    path('ssignup/',views.ssignup,name='ssignup'),
+    path('ssign/',views.ssign,name='ssign'),
+    path('admlogin/',views.admlogin,name='admlogin'),
+    path('alogin/',views.alogin,name='alogin'),
+    path('home/',views.home,name='home'),
+    path('opensugg/',views.opensugg,name='opensugg'),
+    path('addsugg/',views.addsugg,name='addsugg'),
+    path('viewsugg/',views.viewsugg,name='viewsugg'),
+    path('sviewsugg/',views.sviewsugg,name='sviewsugg'),
+    path('placehis/',views.placehis,name='placehis'),
+    path('viewplacehis/',views.viewplacehis,name='viewplacehis'),
+    path('sviewplacehis/',views.sviewplacehis,name='sviewplacehis'),
+    path('addplacedetails/',views.addplacedetails,name='addplacedetails'),
+    path('viewplacedetails/',views.viewplacedetails,name='viewplacedetails'),
+    path('sviewplacedetails/',views.sviewplacedetails,name='sviewplacedetails'),
+    path('i/<pk>/del/',views.del_sugg,name='del_sugg'),
+    path('k/<pk>/delplace/',views.del_place_details,name='del_place_details'),
+    path('alogout/',views.alogout,name='alogout'),
+    path('slogout/',views.slogout,name='slogout'),
+    path('shome/',views.shome,name='shome'),
+    path('forgotpass/',views.forgotpass,name='forgotpass'),
+    path('forgot/',views.forgot,name='forgot'),
+    path('studprofile/',views.studprofile,name='studprofile'),
+    path('cprofile/',views.cprofile,name='cprofile'),
+    path('viewprofile/',views.viewprofile,name='viewprofile'),
+    path('reset_password/', auth_views.PasswordResetView.as_view(template_name="password_reset.html"), name="reset_password" ),
+    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="password_sent.html"), name="password_reset_done"),
+    path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name="password_confirm.html"), name="password_reset_confirm"),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="password_complete.html"), name="password_reset_complete"),
+]

@@ -1,0 +1,224 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/basestyle.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>GetPlaced</title>
+    
+    <style type="text/css">
+        .asteriskField {
+            display: none;
+        }
+
+        form .alert ul li {
+            list-style: none;
+        }
+
+        form .alert ul {
+            padding: 0;
+            margin: 0;
+        }
+
+       
+.btn-link{
+	color: #006600 !important;
+}
+
+.col-md-7{
+  padding: 20px;
+
+}
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+.navbar-text{
+  float: right;
+}
+/* img */
+.impact{
+  height: 100%;
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+}
+
+.impact:hover {
+   transform: scale(1.10);
+}
+
+.mission{
+  transition: 0.5s all ease-in-out;
+}
+
+.mission:hover{
+  transform: scale(1.10);
+}
+/* image zooming */
+
+i{
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+.navbar-brand{
+  font-size: 30px;
+}
+#sclbtn{
+    margin-top:1100px;
+}
+
+
+    </style>
+	
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js
+" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js
+" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js
+" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4" id="mynav">
+        <div class="container">
+            <img src="{% static 'images/cap.png' %}" width="50px" height="50px" ><a class="navbar-brand" href="#">GetPlaced</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav mr-auto">
+                   
+                    
+                </ul>
+                
+                <ul class="navbar-nav">
+                   
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="{%url 'shome' %}" class="btn btn-light ml-2">Home</a><!--change here-->
+                   <a href="{%url 'sviewplacedetails' %}" class="btn btn-outline-light">Placement Details</a>
+                    <a href="{%url 'sviewplacehis' %}" class="btn btn-outline-light">Placement History</a>
+                    <a href="{% url 'sviewsugg' %}" class="btn btn-outline-light">Tips</a>
+                     <div class="btn-group">
+                    <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+                        Profile
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'viewprofile' %}">
+                            <h6 style="color:  #006600;">View Profile</h6>
+                        </a>
+                        <a class="dropdown-item" href="{% url 'studprofile' %}">
+                            <h6 style="color:  #006600;">Create Profile</h6>
+                        </a></div></div>
+                    <a href="{%url 'slogout' %}" class="btn btn-outline-light">Logout</a></form>
+
+                </div>
+            </div>
+        </nav>
+
+                  <!--  <a href="{% url 'studprofile' %}" class="btn btn-outline-light">Create Profile</a>
+                    <a href="{% url 'viewprofile' %}" class="btn btn-outline-light">View Profile</a>
+                    <a href="{% url 'sviewsugg' %}" class="btn btn-outline-light">View suggestions</a>
+                    <a href="{%url 'sviewplacehis' %}" class="btn btn-outline-light">View Placement history</a>
+                    <a href="{%url 'sviewplacedetails' %}" class="btn btn-outline-light">View Placement Details</a>
+                    <a href="{%url 'slogout' %}" class="btn btn-outline-light">logout</a>
+                </form>
+                
+            </div>
+        </div>
+    </nav>-->
+    <div class="row featurette">
+        <div class="col-md-7" style="padding-left: 40px; padding-right: 40px; padding-top:70px;">
+          <h2 class="featurette-heading" style="font-weight:bold">Take the next step in your career today.</h2>
+          <p class="lead">High quality placements can bring a range of benefits and positive impacts. There is strong evidence to suggest that placements and work experience are extremely valuable to students, both in terms of their academic performance and their employability skills. Such opportunities may alleviate barriers to employment for graduates, and notes that both sandwich placements and student/graduate internships hold considerable value for the students personal and professional development, and should be encouraged and provided as opportunities to all where possible.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="mission" src="{% static 'images/gp1.jpg' %}" style=" height: 330px; width: 450px; padding-top: 70px;" alt="">
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2" style="padding-left: 40px; padding-top:30px;
+        padding-right: 40px;">
+          <h2 class="featurette-heading" style="font-weight:bold">What are the benefits of having job experience?<span class="text-muted"></span></h2>
+          <p class="lead" > 1. Improved skills and knowledge, including ‘softer’ employability skills, and specific technical skills and competencies.<br>
+  2. Increased understanding and awareness of the world of work, accelerated personal maturity, self-awareness and ability to articulate skills and achievements.<br>
+  
+  3. Enhanced employment prospects and ability to compete in a turbulent graduate recruitment marketplace.<br>
+  
+  4.Increased positive contact with employers.<br>
+  
+  5.Provides you with confidence and the technical know how to branch into any future dream jobs.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="impact"src="{% static 'images/gp2.jpg' %}" style=" height: 330px; width: 550px; padding-top: 30px; padding-left: 50px">
+        </div>  
+      </div>
+  
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7" style="padding-left: 40px; padding-right: 40px; padding-top:30px;">
+          <h2 class="featurette-heading" style="font-weight:bold">Start your prep today!</h2>
+          <p class="lead">Start by conducting a little survey-<br>
+  
+  
+  1. Which companies visit your college / university for placements? (eg. Infosys,Accenture, L&T and so on)<br>
+  
+  
+  2.Find out what are the recruitment procedures for each of the companies?<br>
+  
+  
+  3. What is the general intake? It will help you in preparation and to find out competition level.<br>
+  
+  
+  4. The most important thing for average and kt students is an eligibility criteria?</p>
+        </div>
+        <div class="col-md-5">
+          <img class="mission" src="{% static 'images/gp3.png' %}" style=" height: 330px; width: 450px; padding-top: 30px;" alt="">
+        </div>
+      </div>
+  
+     
+  
+   <section class="social-menu">
+     
+    <h5>For any queries/issues please contact us at:</h5>
+    <ul id="sclbtn">
+  
+        <li><a href="https://www.cbit.ac.in/
+  "><i class="fa fa-google"></i></a></li>
+        <li><a href="http://learning.cbit.org.in/
+  "><i class="fa fa-paper-plane"></i></a></li>
+      <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=getplacedteam@gmail.com"><i class="fa fa-envelope"></i></a></li>
+       <li><a href="https://in.yahoo.com/
+  "><i class="fa fa-yahoo"></i></a></li>
+    </ul>
+  
+  </section>  
+
+    </body>
+</html>
+
+
+
+
